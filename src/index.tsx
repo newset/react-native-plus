@@ -6,8 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const Plus = NativeModules.Plus
-  ? NativeModules.Plus
+const RNPlus = NativeModules.RNPlus
+  ? NativeModules.RNPlus
   : new Proxy(
       {},
       {
@@ -17,6 +17,6 @@ const Plus = NativeModules.Plus
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Plus.multiply(a, b);
+export function navigate(module: string, route: string) {
+  RNPlus.navigate(module, route);
 }

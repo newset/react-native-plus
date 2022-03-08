@@ -24,7 +24,7 @@ public class RNPlus: NSObject {
     @objc
     func navigate(_ module: String, to route: String){
         DispatchQueue.main.async {
-            let url = URL(string: "http://localhost:8081/\(RNPlus.prefix)/\(module)/index.bundle?platform=ios")!;
+            let url = URL(string: "http://localhost:8081/\(RNPlus.prefix)/\(module.lowercased())/index.bundle?platform=ios")!;
             let rootView = RCTRootView.init(bundleURL: url,
                                             moduleName: module,
                                             initialProperties: ["route": route, "module": module],
