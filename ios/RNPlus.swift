@@ -36,4 +36,11 @@ public class RNPlus: NSObject {
             RNPlus.nav?.pushViewController(page, animated: true);
         }
     }
+
+    @objc
+    func back() {
+         DispatchQueue.main.async {
+            RNPlus.nav?.popViewController(animated: true);
+        }
+    }
 }
